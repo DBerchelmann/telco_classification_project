@@ -59,4 +59,10 @@
      internet_service_type
      payment_type
      
-     
+    
+* Decided to keep customer id for later on in exercise since we need an identifier
+
+* should a new column be created that would be partner with fiber optic on month 2 month? (1 = Yes, 0 = No)
+
+
+* should we create an average monthly charges column?

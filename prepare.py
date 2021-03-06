@@ -41,7 +41,7 @@ def clean_telco(df):
     dummies = pd.get_dummies(df[['gender', 'partner', 'dependents', 'phone_service', 'device_protection','online_security', 'online_backup', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing', 'contract_type', 'internet_service_type', 'payment_type']], drop_first=False)
    
     # create a dropcols where all columns that were created into dummies will be dropped
-    dropcols = ['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'customer_id', 'multiple_lines', 'gender', 'partner', 'dependents', 'phone_service', 'device_protection','online_security', 'online_backup', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing', 'contract_type', 'internet_service_type', 'payment_type']
+    dropcols = ['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'multiple_lines', 'gender', 'partner', 'dependents', 'phone_service', 'device_protection','online_security', 'online_backup', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing', 'contract_type', 'internet_service_type', 'payment_type']
     
     
     df.drop(columns=dropcols, inplace=True)
