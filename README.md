@@ -36,4 +36,14 @@ In addition to this README, you can see my TRELLO project pipeline by visiting t
   <h3><u>Starting Hypothesis</u></h3>
  - TBD
  
+ 
+ 
 --------------------
+ <h3><u>How To Recreate This Project</u></h3>
+ 
+ 
+ 
+ 
+--------------------
+
+ <h3><u>Key Findings, Takeaways, Recommendations</u></h3>
