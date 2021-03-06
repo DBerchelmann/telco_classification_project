@@ -1,10 +1,25 @@
- Project Planning
-Plan -> Acquire -> Prepare -> Explore -> Model & Evaluate -> Deliver
+<b>Friday workflow recap:</b>
 
-Describe the project and goals.
+* We set up our Trello Project Flow
+* Our github repository was created & cloned to our local folder
+* The README was created and is partially complete
+     * still have the data dictionary and hypothesis to put in
+    
+* The .gitignore, acquire.py, prepare.py, & explore.py files were all created
+     * .gitignore has been completed with the env.py while .acquire is complete and has been tested to make sure a data frame can be pull in
+    
+* The Final Jupyter Notebook was created and the main sections have been created and place-holders given for information
+    
 
-Task out how you will work through the pipeline in as much detail as you need to keep on track.
+<b>Saturday to-do:</b>
 
-Include a data dictionary to provide context for and explain your data.
+* consult the syllabus to make sure all rubric points are being touched and completed
 
-Clearly state your starting hypotheses (and add the testing of these to your task list).
+* Create . prepare file
+    * go over check list
+    
+* train/split/validate function needs to be in prepared
+
+* continue to make good notes as the project is worked on, taking note of the time needed to complete each section
+
+* create the explore.py file
