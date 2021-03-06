@@ -27,3 +27,36 @@
 * continue to make good notes as the project is worked on, taking note of the time needed to complete each section
 
 * create the explore.py file
+
+ Prepare Notes
+ ---------------
+ 
+ Drop duplicates first
+ Drop these:
+     payment_type_id
+     internet_service_type_id
+     contract_type_id
+     customer_id
+     multiple_lines
+     
+     
+     
+     
+
+ Get dummies for the following:
+ 
+     gender
+     partner
+     dependents
+     phone_service
+     online_security
+     online_backup
+     tech_support
+     streaming_tv
+     streaming_movies
+     paperless_billing
+     contract_type
+     internet_service_type
+     payment_type
+     
+     
