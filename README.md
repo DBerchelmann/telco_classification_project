@@ -23,7 +23,14 @@ In addition to this README, you can see my TRELLO project pipeline by visiting t
 
 <h3><u>Data Dictionary</u></h3>
     
--  As I work through the data, this section will eventually hold a data dictionary to assist the user in indetifying the data type of features (columns) and a brief description.
+-  As I work through the data, this section will eventually hold a data dictionary to assist the user in identifying the data type of features (columns) and a brief description.
+
+
+
+|   Feature      |  Data Type   | Description    |
+| :------------- | :----------: | -----------: |
+|  Cell Contents | More Stuff   | And Again    |
+| You Can Also   | Put Pipes In | Like this \| |
 
 -------------------
   <h3><u>Starting Hypothesis</u></h3>
