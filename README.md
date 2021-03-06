@@ -19,6 +19,12 @@ In here, you will find expanded information on this project including goals, how
 
 In addition to this README, you can see my TRELLO project pipeline by visiting the following link: https://trello.com/b/6GNQ9yBL
 
+Here is a snapshot of my currently project planning/setup
+
+<img src="/Users/davidberchelmann/codeup-data-science/telco_classification_project/tc_ppline.png"
+     alt="Trello Snapshot"
+     style="float: center; margin-right: 10px;" />
+
 -------------
 
 <h3><u>Data Dictionary</u></h3>
