@@ -21,9 +21,8 @@ In addition to this README, you can see my TRELLO project pipeline by visiting t
 
 Here is a snapshot of my currently project planning/setup
 
-<img src="/Users/davidberchelmann/codeup-data-science/telco_classification_project/tc_ppline.png"
-     alt="Trello Snapshot"
-     style="float: center; margin-right: 10px;" />
+![image info](https://i.ibb.co/wc4zqnG/tc-ppline.png)
+  
 
 -------------
 
