@@ -19,7 +19,7 @@ In here, you will find expanded information on this project including goals, how
 
 In addition to this README, you can see my TRELLO project pipeline by visiting the following link: https://trello.com/b/6GNQ9yBL
 
-Here is a snapshot of my currently project planning/setup
+Here is a snapshot of my project planning/setup on the morning of 3/6/21
 
 ![image info](https://i.ibb.co/wc4zqnG/tc-ppline.png)
   
