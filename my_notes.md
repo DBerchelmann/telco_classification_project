@@ -13,11 +13,11 @@
 
 <b>Saturday to-do:</b>
 
-* consult the syllabus to make sure all rubric points are being touched and completed
+* consult the syllabus to make sure all rubric points are being touched and completed <b>completed</b>
 
 * maybe create seperate notebooks where we test out what we want to put in the acquire, prepare, and explore...keep from muddying up final notebook
 
-* <font color = red>( Complete some initial data summarization (.info(), .describe(), .value_counts(), ...).Plot distributions of individual variables.)</font>
+* <font color = red>( Complete some initial data summarization (.info(), .describe(), .value_counts(), ...).Plot distributions of individual variables.)</font> <b> completed</b>
 
 * Create . prepare file
     * go over check list
