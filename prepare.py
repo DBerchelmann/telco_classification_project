@@ -26,12 +26,26 @@ def clean_telco(df):
     return: single cleaned dataframe
     '''
     df.drop_duplicates(inplace=True)
+    
+     # Encode gender in one column.
     df['churn'] = df['churn'].map( 
                    {'Yes':1 ,'No':0})
+    
+    # Converting the total charges column to a numeric type from object
+    df["total_charges"] = pd.to_numeric(df.total_charges, errors='coerce')
+    
+    # Fill NaN values in total_charges column with 0
     df['total_charges'] = df['total_charges'].fillna(value=0)
-    dummies = pd.get_dummies(df[['gender', 'partner', 'dependents', 'phone_service', 'device_protection','online_security', 'online_backup', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing', 'contract_type', 'internet_service_type', 'payment_type']], drop_first=True)
+    
+    # create dummy columns of encoded categorical variables
+    dummies = pd.get_dummies(df[['gender', 'partner', 'dependents', 'phone_service', 'device_protection','online_security', 'online_backup', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing', 'contract_type', 'internet_service_type', 'payment_type']], drop_first=False)
+   
+    # create a dropcols where all columns that were created into dummies will be dropped
     dropcols = ['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'customer_id', 'multiple_lines', 'gender', 'partner', 'dependents', 'phone_service', 'device_protection','online_security', 'online_backup', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing', 'contract_type', 'internet_service_type', 'payment_type']
+    
+    
     df.drop(columns=dropcols, inplace=True)
+    
     return pd.concat([df, dummies], axis=1)
 
 
