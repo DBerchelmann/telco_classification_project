@@ -38,9 +38,13 @@ Here is a snapshot of my project planning/setup on the morning of 3/6/21
 | You Can Also   | Put Pipes In | Like this \| |
 
 -------------------
-  <h3><u>Starting Hypothesis</u></h3>
- - TBD
+  <h3><u>Hypothesis and Questions</u></h3>
+ - Churn is being driven by customers use fiber optic internet who are single(no dependents) and on month to month contracts
  
+ - Does having multiple phone lines influence churn?
+ - Does having streaming service influence churn?
+ - Is being on a monthly contract make one more likely to churn
+ - Does a higher bill lead to churn?
  
  
 --------------------
