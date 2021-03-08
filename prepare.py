@@ -36,38 +36,40 @@ def clean_telco(df):
      # create new average monthly charges column
     df['average_charges'] = round((df['total_charges']/df['tenure']), 2)
     
+    # Fill NaN values in average_charges column with 0
+    df['average_charges'] = df['average_charges'].fillna(value=0)
     
-     # Encode gender in one column.
+     # Encode churn in one column.
     df['churn'] = df['churn'].map( 
                    {'Yes':1 ,'No':0})
      # create new column for customer who have no partner and no dependents
     
-    df['no_pd'] = (df['partner'] == 'No') & (df['dependents'] == 'No')
+    df['no_partner_depend'] = (df['partner'] == 'No') & (df['dependents'] == 'No')
     
     # encode above boolean column into 0 or 1
 
-    df.no_pd = df.no_pd.replace({True: '1', False: '0'})
+    df.no_partner_depend = df.no_partner_depend.replace({True: 1, False: 0})
     
     # phone_service and multiple_lines
     df['phone_lines'] = (df['phone_service'] == 'Yes') & (df['multiple_lines'] == 'Yes')
     
     # encode above boolean column into 0 or 1
 
-    df.phone_lines = df.phone_lines.replace({True: '1', False: '0'})
+    df.phone_lines = df.phone_lines.replace({True: 1, False: 0})
     
     # create new column for customer who have streaming_tv & streaming_movies
     df['stream_tv_mov'] = (df['streaming_tv'] == 'Yes') & (df['streaming_movies'] == 'Yes')
     
     # encode above boolean column into 0 or 1
 
-    df.stream_tv_mov = df.stream_tv_mov.replace({True: '1', False: '0'})
+    df.stream_tv_mov = df.stream_tv_mov.replace({True: 1, False: 0})
     
     # create new column for customer who have online_security & online_backup
     df['online_sec_bkup'] = (df['online_security'] == 'Yes') & (df['online_backup'] == 'Yes')
     
     # encode above boolean column into 0 or 1
 
-    df.online_sec_bkup = df.online_sec_bkup.replace({True: '1', False: '0'})
+    df.online_sec_bkup = df.online_sec_bkup.replace({True: 1, False: 0})
     
      # create dummy columns of encoded categorical variables
     dummies = pd.get_dummies(df[['gender', 'partner', 'dependents', 'device_protection','tech_support', 'paperless_billing', 'contract_type', 'internet_service_type', 'payment_type']], drop_first=False)
@@ -93,7 +95,7 @@ def clean_telco(df):
  'total_charges',
  'churn',
  'average_charges',
- 'no_pd',
+ 'no_partner_depend',
  'phone_lines',
  'stream_tv_mov',
  'online_sec_bkup',
