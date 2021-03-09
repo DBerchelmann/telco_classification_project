@@ -19,7 +19,7 @@ from sklearn.metrics import confusion_matrix
 
 
 from acquire import get_connection, new_telco_data, get_telco_data
-from prepare import clean_telco
+from prepare import clean_telco, train_validate_test_split
 
 
 
@@ -34,6 +34,12 @@ def run_model():
     
     df = clean_telco(df)
 
+    # train, validate, split the data
+    
+    train, validate, test = train_validate_test_split(df, seed=123)
+    
+    
+    
     # Select features to be used in the model
     cols = ['has_fiber_optic', 
             'tch_support_no',
@@ -42,8 +48,8 @@ def run_model():
             'pmt_electronic_check',
            'online_sec_bkup']
 
-    X = df[cols]
-    y = df.churn
+    X = test[cols]
+    y = test.churn
     
     # Create and fit the model
     forest = RandomForestClassifier(bootstrap=True, 
@@ -56,8 +62,8 @@ def run_model():
 
     # Create a DataFrame to hold predictions
     results = pd.DataFrame(
-        {'Customer_ID': df.customer_id,
-         'Actual_Churn': df.churn,
+        {'Customer_ID': test.customer_id,
+         'Actual_Churn': test.churn,
          'Model_Predictions': forest.predict(X),
          'Model_Probabilities': forest.predict_proba(X)[:,1]
         })
