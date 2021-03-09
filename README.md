@@ -146,4 +146,6 @@ from sklearn.metrics import confusion_matrix
 - I believe an age column would be helpful to further determine churn and help marketing target that subset
 
 - Another column of information that could be helpful is area of residence to see if perhaps there is a concentration of where churn is occuring
+
+- Customers on month to month contracts need to be incentivized in different ways to stay on. This can be achieved through discounts, money back, giveaways, prompt customer service, and good purchasing experiences too name a few.
 -----
