@@ -30,39 +30,51 @@ def clean_telco(df):
      # Converting the total charges column to a numeric type from object
     df["total_charges"] = pd.to_numeric(df.total_charges, errors='coerce')
     
+    
     # Fill NaN values in total_charges column with 0
     df['total_charges'] = df['total_charges'].fillna(value=0)
+    
     
      # create new average monthly charges column
     df['average_charges'] = round((df['total_charges']/df['tenure']), 2)
     
+    
     # Fill NaN values in average_charges column with 0
     df['average_charges'] = df['average_charges'].fillna(value=0)
     
-     # Encode churn in one column.
-    df['churn'] = df['churn'].map( 
-                   {'Yes':1 ,'No':0})
-     # create new column for customer who have no partner and no dependents
     
+    # create a tenure in years column
+    df['tenure_years'] = round(df.tenure / 12, 2)
+    
+    
+    
+     # Encode churn in one column to use when 'yes' 'no' can't be.
+    df['encoded_churn'] = df['churn'].map( 
+                   {'Yes':1 ,'No':0})
+    
+     # create new column for customer who have no partner and no dependents    
     df['no_partner_depend'] = (df['partner'] == 'No') & (df['dependents'] == 'No')
     
+    
     # encode above boolean column into 0 or 1
-
     df.no_partner_depend = df.no_partner_depend.replace({True: 1, False: 0})
+    
     
     # phone_service and multiple_lines
     df['phone_lines'] = (df['phone_service'] == 'Yes') & (df['multiple_lines'] == 'Yes')
     
+    
     # encode above boolean column into 0 or 1
-
     df.phone_lines = df.phone_lines.replace({True: 1, False: 0})
+    
     
     # create new column for customer who have streaming_tv & streaming_movies
     df['stream_tv_mov'] = (df['streaming_tv'] == 'Yes') & (df['streaming_movies'] == 'Yes')
     
+    
     # encode above boolean column into 0 or 1
-
     df.stream_tv_mov = df.stream_tv_mov.replace({True: 1, False: 0})
+    
     
     # create new column for customer who have online_security & online_backup
     df['online_sec_bkup'] = (df['online_security'] == 'Yes') & (df['online_backup'] == 'Yes')
@@ -71,30 +83,33 @@ def clean_telco(df):
 
     df.online_sec_bkup = df.online_sec_bkup.replace({True: 1, False: 0})
     
+    
      # create dummy columns of encoded categorical variables
     dummies = pd.get_dummies(df[['gender', 'partner', 'dependents', 'device_protection','tech_support', 'paperless_billing', 'contract_type', 'internet_service_type', 'payment_type']], drop_first=False)
    
+
+
     # create a dropcols where all columns that were created into dummies will be dropped
     dropcols = ['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'multiple_lines', 'gender', 'partner', 'dependents', 'phone_service', 'device_protection','online_security', 'online_backup', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing', 'contract_type', 'internet_service_type', 'payment_type']
     
-    # drop cols from above
     
+    # drop cols from above
     df.drop(columns=dropcols, inplace=True)
     
-    # rename columns
-
-  
+    # combine the original data frame with the new dummies columns
     df = pd.concat([df, dummies], axis=1)
     
-    # rename columns
     
+    # rename columns    
     df.columns = ['customer_id',
  'senior_citizen',
- 'tenure',
+ 'tenure_in_months',
  'monthly_charges',
  'total_charges',
  'churn',
  'average_charges',
+ 'tenure_in_years', 
+ 'encoded_churn',
  'no_partner_depend',
  'phone_lines',
  'stream_tv_mov',
