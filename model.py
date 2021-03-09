@@ -49,7 +49,7 @@ def run_model():
            'online_sec_bkup']
 
     X = test[cols]
-    y = test.churn
+    y = test.encoded_churn
     
     # Create and fit the model
     forest = RandomForestClassifier(bootstrap=True, 
@@ -63,7 +63,7 @@ def run_model():
     # Create a DataFrame to hold predictions
     results = pd.DataFrame(
         {'Customer_ID': test.customer_id,
-         'Actual_Churn': test.churn,
+         'Actual_Churn': test.encoded_churn,
          'Model_Predictions': forest.predict(X),
          'Model_Probabilities': forest.predict_proba(X)[:,1]
         })
